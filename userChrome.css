@@ -1,0 +1,44 @@
+@import url("animations.css");
+
+:root,
+menupopup,
+panel,
+#tab-preview-panel {
+  --border-radius-small: 0 !important;
+  --border-radius-medium: 0 !important;
+  --border-radius-large: 0 !important;
+  --button-border-radius: 0 !important;
+  --tab-border-radius: 0 !important;
+  --urlbar-border-radius: 0 !important;
+  --urlbarview-border-radius: 0 !important;
+  --arrowpanel-border-radius: 0 !important;
+  --arrowpanel-menuitem-border-radius: 0 !important;
+  --panel-border-radius: 0 !important;
+  --toolbarbutton-border-radius: 0 !important;
+}
+
+:root {
+  --chrome-window-gap: 0 !important;
+  --chrome-block-radius: 0 !important;
+  --chrome-content-separator-color: transparent !important;
+}
+
+*,
+*::before,
+*::after {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+menupopup::part(content),
+menupopup::part(arrowscrollbox),
+panel::part(content),
+#tab-preview-panel::part(content) {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+panel,
+#tab-preview-panel {
+  appearance: none !important;
+}

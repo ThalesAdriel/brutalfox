@@ -1,0 +1,72 @@
+:root {
+  --anim-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --anim-quick: 0.15s ease-out;
+
+  --anim-inactive-opacity: 0.5;
+  --anim-hover-scale: 1.05;
+  --anim-press-scale: 0.92;
+}
+
+.tabbrowser-tab:not([selected]) :is(.tab-icon-image, .tab-label-container) {
+  opacity: var(--anim-inactive-opacity);
+  transition: opacity var(--anim-smooth);
+}
+
+.tabbrowser-tab:hover :is(.tab-icon-image, .tab-label-container) {
+  opacity: 1;
+}
+
+.tabbrowser-tab:hover .tab-close-button {
+  animation: sq-fade-in 0.2s ease-out;
+}
+
+.tab-close-button {
+  transition: transform var(--anim-quick);
+}
+
+.tab-close-button:hover {
+  transform: scale(1.1);
+}
+
+#urlbar-results .urlbarView-row {
+  transition: transform var(--anim-quick);
+}
+
+#urlbar-results .urlbarView-row:is(:hover, [selected]) {
+  transform: translateX(4px);
+}
+
+.toolbarbutton-1 {
+  transition: transform var(--anim-quick);
+}
+
+#tabs-newtab-button {
+  opacity: var(--anim-inactive-opacity);
+  transition: opacity var(--anim-smooth), transform var(--anim-quick);
+}
+
+#tabs-newtab-button:hover {
+  opacity: 1;
+}
+
+:is(.toolbarbutton-1, #tabs-newtab-button):hover {
+  transform: scale(var(--anim-hover-scale));
+}
+
+:is(.toolbarbutton-1, #tabs-newtab-button):active {
+  transform: scale(var(--anim-press-scale));
+}
+
+@keyframes sq-fade-in {
+  from { opacity: 0; transform: scale(0.85); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
