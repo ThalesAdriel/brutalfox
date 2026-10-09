@@ -36,9 +36,6 @@
   transform: translateX(4px);
 }
 
-.toolbarbutton-1 {
-  transition: transform var(--anim-quick);
-}
 
 #tabs-newtab-button {
   opacity: var(--anim-inactive-opacity);
